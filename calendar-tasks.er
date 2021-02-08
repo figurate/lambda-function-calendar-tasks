@@ -1,0 +1,46 @@
+[organizer]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[task]
+    *id {label:"VARCHAR(80)"}
+    summary {label:"VARCHAR(80)"}
+    description {label:"VARCHAR(1024)"}
+    priority {label:"INTEGER"}
+    status {label:"INTEGER"}
+    classification {label:"VARCHAR(80)"}
+    organizer_id {label:"VARCHAR(80)"}
+
+[task_attachment]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[task_comment]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[task_contact]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[task_category]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+    color {label:"VARCHAR(80)"}
+    parent {label:"VARCHAR(80)"}
+
+[task_related]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+[task_resources]
+    *id {label:"VARCHAR(80)"}
+    name {label:"VARCHAR(80)"}
+
+organizer 1--+ task
+task 1--* task_attachment
+task 1--* task_comment
+task 1--* task_contact
+task *--* task_category
+task 1--* task_related
+task 1--* task_resources
